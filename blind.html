@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Слепая печать</title>
+</head>
+<body>
+<script type="text/javascript">
+	alert('Приветсвую тебя! Это программа обучает слепой печати.');
+
+	function getRandomNumber(max) {
+		return Math.round(Math.random() * max);
+	}
+
+	function generateText(letters, length) {
+		var text = "";
+		for (var i = 0; i < length; i++) {
+			var n = getRandomNumber(letters.length - 1);
+			text = text + letters[n];
+		}
+		return text;
+	}
+
+	while(true){
+		alert('Поставь свой безымянный палец на клавишу Ф, средний на Ц, указательный на В. Тебе будут показаны буквы в определенном порядке, постарайся повторить, несмотря на клавиатуру. Ты можешь допустить только 3 ошибки!');
+		
+		 var text = generateText(['ф','ц','в'], 10);
+		 var userText = prompt(text);
+
+		 if (userText == text) {
+		 	alert('Верно! Ты молодец!');
+		 	break;
+		 } else {
+		 	alert('Неверно!Ты ошибся.Попробуй еще раз');
+		 }
+	}
+
+</script>
+
+</body>
+</html>
